@@ -3,6 +3,7 @@
 test:
     FROM --platform=linux/amd64 alpine:3.13
     ARG EARTHLY_TARGET
+    RUN echo "this Eartfile has moved to github.com/earthly/test-remote/builtin-args" && exit 1
     RUN echo "EARTHLY_TARGET=$EARTHLY_TARGET"
     RUN test "$EARTHLY_TARGET" = "github.com/earthly/test-builtin-args/subdir:main+test"
     ARG EARTHLY_TARGET_PROJECT
